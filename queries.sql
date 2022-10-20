@@ -59,7 +59,7 @@ SELECT species.name, COUNT(animals.species_id) FROM animals JOIN species ON spec
 
 SELECT animals.name AS animal_name , owners.full_name AS owner_name FROM animals INNER JOIN owners ON owners.id = 2 AND species_id = 2;
 
-SELECT *  FROM animals WHERE owner_id = 5 AND escape_attempts = 0;
+SELECT animals.name, owners.full_name FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owners.id = 5 AND animals.escape_attempts = 0;
 
 SELECT full_name, COUNT(owner_id) FROM owners JOIN animals on owners.id = animals.owner_id GROUP BY full_name ORDER BY COUNT (owner_id) desc limit 1;
 
