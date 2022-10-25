@@ -48,3 +48,12 @@ CREATE TABLE visits (
     date_of_visit date
 );
 
+ALTER TABLE owners ALTER COLUMN age DROP NOT NULL;
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+
+CREATE INDEX visits_by_animal_id ON visits(animal_id ASC);
+CREATE INDEX visits_by_vets_id ON visits(vets_id ASC);
+CREATE INDEX owners_by_email ON owners(email ASC);
+
